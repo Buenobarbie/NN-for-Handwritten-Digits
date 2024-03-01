@@ -30,7 +30,7 @@ In this case: calculating the gradient of a Value and its childrens.
 
 ## Code
 
-```
+```python
   def backward(self):
     
     topo = []
