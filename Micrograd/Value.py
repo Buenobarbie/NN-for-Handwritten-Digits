@@ -13,7 +13,7 @@ class Value:
   def __repr__(self):
     return f"Value(data={self.data})"
   
-  # A + B
+  ################ self + other  ################
   def __add__(self, other):
     out = Value(self.data + other.data, (self, other), '+')
     
@@ -24,7 +24,7 @@ class Value:
     
     return out
 
-  # A * B
+  ################ self * other  ################
   def __mul__(self, other):
     out = Value(self.data * other.data, (self, other), '*')
     
@@ -35,6 +35,11 @@ class Value:
       
     return out
   
+  ################ -self ################
+  def __neg__(self):
+    return self * (-1)
+  
+  ################ thanh(self)  ################
   def tanh(self):
     x = self.data
     t = (math.exp(2*x) - 1)/(math.exp(2*x) + 1)
